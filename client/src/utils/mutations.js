@@ -10,7 +10,14 @@ export const LOGIN_USER = gql`
                 username
                 email
                 bookCount
-                savedBooks
+                savedBooks {
+                    bookId
+                    authors
+                    description
+                    title
+                    image
+                    link
+                }
             }
         }
     }
@@ -24,35 +31,51 @@ export const ADD_USER = gql`
                 username
                 email
                 bookCount
-                savedBooks
+                savedBooks {
+                    bookId
+                    authors
+                    description
+                    title
+                    image
+                    link
+                }
             }
         }
     }
 `
 export const SAVE_BOOK = gql`
-    mutation saveBook($userId: String!, $data: saveBookContent!  ){
-        saveBook(userId: $userId, data: $data ) {
-            user {    
-                _id
-                username
-                email
-                bookCount
-                savedBooks
+    mutation saveBook($data: saveBookContent!  ){
+        saveBook(data: $data ) {
+            _id
+            username
+            email
+            bookCount
+            savedBooks {
+                bookId
+                authors
+                description
+                title
+                image
+                link
             }
         }
     }
 `
 export const REMOVE_BOOK = gql`
-    mutation removeBook($userId: String!, $bookId: String!){
-        removeBook(userId: $userId, bookId: $bookId) {
-            user {    
-                _id
-                username
-                email
-                bookCount
-                savedBooks
+    mutation removeBook($bookId: ID!){
+        removeBook(bookId: $bookId) {
+            _id
+            username
+            email
+            bookCount
+            savedBooks {
+                bookId
+                authors
+                description
+                title
+                image
+                link
             }
-
         }
     }
 `
