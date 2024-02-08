@@ -27,6 +27,8 @@ You can also run the server/database locally and then access it via localhost at
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project is licensed under the terms of the MIT License license
+## Credit
+A large portion of this project was provided by the BootCampSpot. It was created as a REST api server, and I ONLY converted it to use mutations/queries. 90% of this is not my original code and was used with permission as a challenge assignment
 ## Contributing
 No contributions at this time 
 ## Tests 
